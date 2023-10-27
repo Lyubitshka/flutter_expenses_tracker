@@ -83,9 +83,9 @@ unlinked_spec.ds
 /test
 /web
 /windows
-# .metadata
-# .analysis_opinions.yaml
-# .pubspec.lock
+.metadata
+.analysis_options.yaml
+.pubspec.lock
 # Coverage
 coverage/
 
