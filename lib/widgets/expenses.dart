@@ -22,7 +22,7 @@ class _ExpensesState extends State<Expenses> {
     ),
     Expense(
       title: 'Korfu trip - villa',
-      amount: 2720,
+      amount: 272,
       date: DateTime.now(),
       category: Category.travel,
     ),
@@ -91,38 +91,41 @@ class _ExpensesState extends State<Expenses> {
     }
 
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Flutter Expenses Tracker',
-          ),
-          // backgroundColor: const Color.fromARGB(255, 2, 166, 57),
-          actions: [
-            IconButton(
-              onPressed: _openAddExpenseOverlay,
-              icon: const Icon(Icons.add),
-            ),
-          ],
+      appBar: AppBar(
+        title: const Text(
+          'Flutter Expenses Tracker',
         ),
-        body: width < 600
-            ? Column(
-                children: [
-                  Chart(expenses: _registeredExpenses),
-                  //widget list
-                  Expanded(
-                    child: mainContent,
-                  ),
-                ],
-              )
-            : Row(
-                children: [
-                  Expanded(
-                    child: Chart(expenses: _registeredExpenses),
-                  ),
-                  //widget list
-                  Expanded(
-                    child: mainContent,
-                  ),
-                ],
-              ));
+        // backgroundColor: const Color.fromARGB(255, 2, 166, 57),
+        actions: [
+          IconButton(
+            onPressed: _openAddExpenseOverlay,
+            icon: const Icon(Icons.add),
+          ),
+        ],
+      ),
+      body: width < 600
+          ? Column(
+              children: [
+                Chart(
+                  expenses: _registeredExpenses,
+                ),
+                //widget list
+                Expanded(
+                  child: mainContent,
+                ),
+              ],
+            )
+          : Row(
+              children: [
+                Expanded(
+                  child: Chart(expenses: _registeredExpenses),
+                ),
+                //widget list
+                Expanded(
+                  child: mainContent,
+                ),
+              ],
+            ),
+    );
   }
 }
